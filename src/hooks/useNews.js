@@ -14,12 +14,19 @@ function useNews(topic) {
         setError(null)
         setArticles([]) // Clear previous articles
 
+        // Check if API key is available
+        if (!import.meta.env.VITE_NEWS_API_KEY) {
+          throw new Error('News API key not configured')
+        }
+
         const newsUrl = `https://newsdata.io/api/1/news?apikey=${import.meta.env.VITE_NEWS_API_KEY}&country=in&language=en&q=${encodeURIComponent(topic + " government scheme")}`
         
-        // Use CORS proxy for browser requests
-        const corsProxyUrl = `https://cors-anywhere.herokuapp.com/${newsUrl}`
-        
-        const response = await fetch(corsProxyUrl)
+        const response = await fetch(newsUrl, {
+          headers: {
+            'Accept': 'application/json',
+          },
+          mode: 'cors'
+        })
 
         if (!response.ok) {
           throw new Error('Failed to fetch news')
