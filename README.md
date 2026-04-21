@@ -2,6 +2,10 @@
 
 A comprehensive platform connecting citizens with government schemes and initiatives, featuring a public grievance portal for transparent issue reporting and community-driven prioritization.
 
+## 🎬 Demo
+
+[▶️ Watch the Intro Video](https://drive.google.com/file/d/17fGC9iKbtioqb8U3lQIni_ROfahVZ2vB/view?usp=sharing)
+
 ## 🌟 Features
 
 ### Government Schemes Database
